@@ -17,8 +17,8 @@ def bfs():
             if 0<= nr<n and 0<=nc <m and castle[nr][nc] != 1 and visit[nr][nc] == 0:
                 Q.append((nr,nc))
                 visit[nr][nc] = visit[r][c]+1
+                print(visit)
     return time
-
 
 dr = [1,-1,0,0]
 dc = [0,0,1,-1]
