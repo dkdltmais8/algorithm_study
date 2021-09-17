@@ -14,3 +14,7 @@ def solution(w,h):
         print(x,y,answer)
     return answer
 solution(8,12)
+
+#answer를 대각선 기준으로 반만 구해서 *2를 해주는데
+#[10,9,7,6,4,3,1,0]순이므로 h=>12에서 정확한 점 일 때를 제외한 나머지 경우에
+#math.ceil()로 올려서 빼버린다.
