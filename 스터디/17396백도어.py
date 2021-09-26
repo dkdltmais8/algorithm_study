@@ -41,3 +41,12 @@ dijkstra(0)
 # print(graph)
 #마지막에 도착 했을 때 시간이 초기설정값이 아니라면 출력하고 맞다면 갈 수 없다는 것이기 때문에 -1리턴
 print(time[n-1] if time[n-1] != sys.maxsize else -1)
+
+
+################################################
+# 다익스트라 알고리즘 => 최단 경로 트리(가중치 이용)
+#
+# - 가중치의 합이 제일 적게 끝 노드에 도착
+# - heapq, heappush, heappop 이용
+# - 처음에 갈 수 있는 경로가 들어있는 List 만들어주기.(Graph)
+# - 사용하는 함수만 다르고 BFS와 비슷함.(append 대신 heapq.heappush,      pop 대신 heapq.heappop)
