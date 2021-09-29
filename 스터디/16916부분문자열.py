@@ -9,6 +9,7 @@ def make_pi(p):
 
 def kmp(s,p):
     make_pi(p)
+    print(pi)
     i = 0
     for j in range(len(s)):
         while i>0 and s[j] != p[i]:
@@ -27,4 +28,4 @@ if kmp(s,p):
     print(1)
 else:
     print(0)
-print(pi)
+# print(pi)
