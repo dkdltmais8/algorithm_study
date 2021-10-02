@@ -86,3 +86,4 @@ ans = go_umbrella()
 # print(visit)
 # print(umb)
 print(ans)
+# https://www.acmicpc.net/problem/22944
