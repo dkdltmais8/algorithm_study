@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0c663003-8561-4a3a-b03f-6bfc1653d518" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/메뉴 리뉴얼.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/메뉴 리뉴얼(진행중).py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/행렬 테두리 회전하기.py" beforeDir="false" afterPath="$PROJECT_DIR$/행렬 테두리 회전하기(진행중).py" afterDir="false" />
     </list>
