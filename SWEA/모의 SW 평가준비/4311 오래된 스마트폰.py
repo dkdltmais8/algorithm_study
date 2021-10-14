@@ -1,4 +1,7 @@
-def check(num,cal,cnt,n):
+from collections import deque
+def bfs():
+    Q = deque()
+    Q.append
     if cnt > touch_count:
         return -1
     if n>999 or n<0:

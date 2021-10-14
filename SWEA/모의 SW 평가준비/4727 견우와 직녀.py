@@ -5,9 +5,9 @@ def bfs():
     Q = deque()
     Q.append((0,0))
     visit[0][0] = 0
-    cnt = 0
     while Q:
         r,c = Q.popleft()
+        cnt = 0
         for i in range(4):
             nr = r+dr[i]
             nc = c+dc[i]
