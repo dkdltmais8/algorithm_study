@@ -25,3 +25,5 @@ for tc in range(1,int(input())+1):
             if board[r][c] == 2:
                 sr,sc = r,c
     dfs(sr,sc,0,0)
+
+
