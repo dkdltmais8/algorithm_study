@@ -16,3 +16,9 @@ for i in ans:
         tot += abs(rx-px)+abs(ry-py)+1
         rx,ry = px,py
 print(tot)
+
+# lst = ['qwertyuiop','asdfghjkl','zxcvbnm']
+# dic = dict()
+# for i in range(3):
+#     for j in range(len(i)):
+#         dic[lst[i][j]] = (i,j)
