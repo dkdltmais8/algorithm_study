@@ -21,7 +21,7 @@ def solution(str1, str2):
             res2[i] += 1
         else:
             res2[i] = 1
-    # print(res1,res2)
+    # print(res1,res2)x
     tot1,tot2,tot3 = 0,0,0
     for i in res1:
         if i in res2:
