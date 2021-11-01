@@ -5,7 +5,7 @@ arr = list(map(int,input().split()))
 tmp = sum(arr[:m])
 ans = tmp
 for i in range(m,n):
-    tmp +=arr[i]
+    tmp += arr[i]
     tmp -= arr[i-m]
     if tmp>ans:
         ans = tmp
