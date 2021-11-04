@@ -11,7 +11,7 @@ def bfs():
         if r == m-1 and c== n-1:
             print(visit[r][c][cnt]-1)
             return
-        if cnt <k:
+        if cnt<k:
             monkey(r,c,cnt)
             horse(r,c,cnt)
         else:
