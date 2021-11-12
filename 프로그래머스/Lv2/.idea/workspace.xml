@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0c663003-8561-4a3a-b03f-6bfc1653d518" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/숫자의 표현.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/올바른 괄호.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
