@@ -20,8 +20,8 @@ def solution(genres, plays):
                 break
             lst.append(j)
             cnt+=1
-    print(dic)
-    print(lst)
+    # print(dic)
+    # print(lst)
     for i in lst:
         first = plays.index(i)
         if first not in answer:
