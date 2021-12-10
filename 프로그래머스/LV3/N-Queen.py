@@ -1,10 +1,21 @@
 def solution(n):
-    def  dfs()
+    def check(idx):
+        for i in range(idx):
+            if row[idx]==row[i] or abs(row[idx]-row[i]) ==idx-i:
+                return False
+        return True
+    def  dfs(idx):
+        nonlocal answer
+        if idx == n:
+            answer += 1
+        else:
+            for i in range(n):
+                row[idx] = i
+                if check(idx):
+                    dfs(idx+1)
     answer = 0
-    board = [list(0 for i in range(n)) for _ in range(n)]
-    for i in range(n):
-        for j in range(n):
-
-    print(board)
+    row = [0]*n
+    dfs(0)
+    # print(answer)
     return answer
 solution(4)
