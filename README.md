@@ -7,3 +7,5 @@ https://blog.naver.com/dkdltmais9
 12.11 - kb데이타시스템 코테..ㄴ
 
 12.17 - 2연속 광탈
+
+12.21 - 오프라인 수료식
