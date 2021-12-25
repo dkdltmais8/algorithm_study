@@ -3,16 +3,15 @@ def solution(numbers):
     d = len(numbers)
     res=[]
     for i in numbers:
-        res.append(str(i))
+        fake = (str(i)*4)[:4]
+        real = len(str(i))
+        res.append((fake,real))
     res.sort(reverse=True)
-    for i in range(d-1):
-        if 10<int(res[i])<100 and (int(res[i])%10)<int(res[i+1]) and int(res[i])//10 == int(res[i+1]):
-            res[i+1],res[i] = res[i],res[i+1]
-        if 100<int(res[i])<1000 and (int(res[i])%100)<int(res[i+1]) and int(res[i])//100 == int(res[i+1]):
-            res[i+1],res[i] = res[i],res[i+1]
-    for i in res:
-        answer+=i
-    print(answer)
+    for (fake,real) in res:
+        answer += fake[:real]
+
+    if answer != str(int(answer)):
+        answer = '0'
     return answer
-solution([3,30,34,6,9])
+solution([3,30,34,5,9])
 solution([6,10,2])
