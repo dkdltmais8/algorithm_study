@@ -11,8 +11,6 @@ def solution(n, edge):
                 if visit[i] == 0:
                     visit[i] = visit[now]+1
                     Q.append(i)
-
-
     answer = 0
     node = [[] for _ in range(n+1)]
     for i in edge:
