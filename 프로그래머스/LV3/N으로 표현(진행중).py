@@ -13,8 +13,9 @@ def solution(N, number):
         if number in ans[i]:
             answer = i
             break
+    print(ans)
     return answer
-solution(5,12)
+solution(5,555556)
 # solution(2,11)
 # 1.나눌 수 있을때까지 나누고 나머지는 1로 더해주기
 # 2.1,11,111등으로 나누고 나머지를 더해주기
