@@ -5,6 +5,8 @@ def solution(n, k):
     for i in range(3,21):
         dp.append(dp[i-1]*i)
     while n>0:
+        print(dp)
+        print(answer)
         mok = (k-1)//dp[n-1]
         answer.append(arr[mok])
         arr.pop(mok)
