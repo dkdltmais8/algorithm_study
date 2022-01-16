@@ -3,7 +3,6 @@ arr = list(map(int,input().split()))
 minus = []
 plus = []
 tot = []
-ans = 0
 for i in arr:
     if i<0:
         minus.append(i)
@@ -20,7 +19,6 @@ for i in range(len(plus)//m):
 if len(plus)%m>0:
     tot.append(plus[(len(plus)//m)*m])
 tot.sort()
-for i in range(len(tot)-1):
-    ans += (tot[i]*2)
-ans += tot[-1]
+ans = sum(tot)*2
+ans -= tot[-1]
 print(ans)
