@@ -12,6 +12,7 @@ def solution(numbers):
 
     if answer != str(int(answer)):
         answer = '0'
+    print(answer)
     return answer
 solution([3,30,34,5,9])
 solution([6,10,2])
