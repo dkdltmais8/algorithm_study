@@ -1,4 +1,4 @@
-from copy import deepcopy
+from sys import setrecursionlimit
 answer = [0,0]
 def check(arr):
     now = arr[0][0]
