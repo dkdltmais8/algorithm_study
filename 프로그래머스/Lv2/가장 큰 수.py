@@ -9,7 +9,6 @@ def solution(numbers):
     res.sort(reverse=True)
     for (fake,real) in res:
         answer += fake[:real]
-
     if answer != str(int(answer)):
         answer = '0'
     print(answer)
