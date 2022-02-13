@@ -1,13 +1,13 @@
 from collections import deque
+from copy import deepcopy
 dr = [1,-1,0,0]
 dc = [0,0,1,-1]
 def solution(game_board, table):
     def bfs(idx):
-        lst = [(0,0)]
+        lst = [[idx[0],idx[1]]]
         Q = deque()
         visit[idx[0]][idx[1]] = 1
         Q.append(idx)
-        x,y = idx[0],idx[1]
         while Q:
             r,c = Q.popleft()
             for i in range(4):
@@ -17,14 +17,13 @@ def solution(game_board, table):
                     if visit[nr][nc] == 0:
                         visit[nr][nc] = 1
                         Q.append((nr,nc))
-                        lst.append((nr-x,nc-y))
-        candidate.append(lst)
+                        lst.append([nr,nc])
+        candidate.append(sorted(change(lst)))
     def bfs2(idx):
-        lst2 = [(0,0)]
+        lst2 = [[idx[0],idx[1]]]
         Q = deque()
         visit[idx[0]][idx[1]] = 1
         Q.append(idx)
-        x,y = idx[0],idx[1]
         while Q:
             r,c = Q.popleft()
             for i in range(4):
@@ -34,15 +33,22 @@ def solution(game_board, table):
                     if visit[nr][nc] == 0:
                         visit[nr][nc] = 1
                         Q.append((nr,nc))
-                        lst2.append((nr-x,nc-y))
-        candidate2.append(lst2)
+                        lst2.append([nr,nc])
+        candidate2.append(sorted(change(lst2)))
     def lotate(lst):
         r = len(lst)
-        res = [[0]*r for _ in range(r)]
-        for i in range(r):
-            for j in range(r):
-                res[j][r-i-1] = lst[i][j]
-        return sorted(res)
+        res = []
+        for i in lst:
+            res.append([i[1],r-1-i[0]])
+        return sorted(change(res))
+    def change(lst):
+        minr = sorted(lst,key=lambda x:x[0])[0][0]
+        minc = sorted(lst,key=lambda x:x[1])[0][1]
+        for i in range(len(lst)):
+            lst[i][0] = lst[i][0]-minr
+            lst[i][1] = lst[i][1]-minc
+        return lst
+
     answer = 0
     candidate = []
     candidate2 = []
@@ -56,30 +62,28 @@ def solution(game_board, table):
         for j in range(len(game_board[0])):
             if game_board[i][j] == 0 and visit[i][j] == 0:
                 bfs2((i,j))
-    print(candidate)
-    print(candidate2)
+
     for i in candidate2:
         for j in candidate:
             if len(i)!=len(j):
                 continue
             else:
-                flag = False
                 if i == j:
                     answer += len(j)
-                    candidate2.remove(j)
+                    candidate.remove(j)
+                    break
                 else:
-                    for a in j:
-
-                    for _ in range(3):
-                        j = lotate(j)
-                        if i == j:
+                    a = deepcopy(j)
+                    flag = False
+                    for _ in range(4):
+                        a = lotate(a)
+                        if i == a:
                             answer += len(j)
-                            candidate2.remove(j)
+                            candidate.remove(j)
                             flag = True
                             break
                     if flag:
                         break
-
-
+    # print(answer)
     return answer
 solution([[1,1,0,0,1,0],[0,0,1,0,1,0],[0,1,1,0,0,1],[1,1,0,1,1,1],[1,0,0,0,1,0],[0,1,1,1,0,0]],[[1,0,0,1,1,0],[1,0,1,0,1,0],[0,1,1,0,1,1],[0,0,1,0,0,0],[1,1,0,1,1,0],[0,1,0,0,0,0]])
