@@ -17,7 +17,9 @@ def solution(a, b, g, ss, w, t):
             #옮길 수 있는 만큼 옮기기
             mg += ng if ng<nw*cnt else nw*cnt
             ms += ns if ns<nw*cnt else nw*cnt
+            #둘을 옮긴 것이 한번에 옮길 수 있는 양을 넘지 않았는지 검사
             total += ns+ng if ns+ng<nw*cnt else nw*cnt
+        #현재 금과 은이 최소 조건을 만족하고 전체의 양이 금과 은을 합친것보다 같거나 크면 성공
         if mg>=a and ms>=b and total>=a+b:
             answer = min(answer,mid)
             e = mid-1
