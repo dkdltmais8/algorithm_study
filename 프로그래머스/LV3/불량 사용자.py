@@ -1,31 +1,32 @@
-from collections import defaultdict
+from itertools import permutations
 def solution(user_id, banned_id):
-    answer = 0
-    def check(s1):
-        nonlocal dic
-        for s2 in user_id:
-            flag = False
-            if len(s1) != len(s2):
-                continue
-            for i in range(len(s1)):
-                if s1[i] != s2[i]:
-                    if s1[i] == '*':
-                        continue
-                    else:
-                        flag = True
-                        break
-            if flag:
-                continue
-            dic[s1] += 1
-    dic = defaultdict(int)
-    for i in banned_id:
-        if i not in dic:
-            check(i)
-    print(dic)
-    return answer
+    def check(r,c):
+        #길이가 다르면 *랑 상관없이 불가능
+        if len(r) != len(c):
+            return False
+        else:
+            for i,j in zip(r,c):
+                # *이면 검사안하고 넘김
+                if j == '*':
+                    continue
+                # 다르면 실패
+                if i!=j:
+                    return False
+            #생성가능한 문자
+            return True
+    answer = []
+    for i in permutations(user_id,len(banned_id)):
+        cnt = 0
+        for r,c in zip(i,banned_id):
+            if check(r,c):
+                #가능한 개수 증가
+                cnt += 1
+        #가능한 개수가 같으면 성공적인 검출
+        if cnt == len(banned_id):
+            #중복된 사용자는 불가능이기 때문에 중복검사
+            if set(i) not in answer:
+                answer.append(set(i))
+    return len(answer)
 
-###키 카운트해서 개수 체크하기
-###벨류 중복 체크해서 중복 있는 키랑 카운트 합치고 벨류 중복값 빼고 카운트
 solution(["frodo", "fradi", "crodo", "abc123", "frodoc"],["fr*d*", "abc1**"])
-solution(["frodo", "fradi", "crodo", "abc123", "frodoc"],["*rodo", "*rodo", "******"])
-solution(["frodo", "fradi", "crodo", "abc123", "frodoc"],["fr*d*", "*rodo", "******", "******"])
+# solution(["frod, "fradi", "crodo", "abc123", "frodoc"],["fr*d*", "*rodo", "******", "******"])
