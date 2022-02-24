@@ -4,16 +4,18 @@ def check(r,c):
     cntb = 0
     for i in range(r,r+8):
         for j in range(c,c+8):
-            #시작이 검정인 경우
             if (i+j)%2 == 0:
+                #시작이 흰색인 경우
                 if lst[i][j] != 'W':
                     cntw += 1
+                #시작이 검정인 경우
                 if lst[i][j] != "B":
                     cntb += 1
-            #시작이 흰색인 경우
             else:
+                #시작이 흰색인 경우
                 if lst[i][j] != 'B':
                     cntw += 1
+                #시작이 검은색인 경우
                 if lst[i][j] != "W":
                     cntb += 1
     tot = min(tot,cntw,cntb)
@@ -27,4 +29,3 @@ for i in range(n-7):
     for j in range(m-7):
         check(i,j)
 print(tot)
-#8*8배열을 골라 몇 개를 고쳐야 하는지 정하자
