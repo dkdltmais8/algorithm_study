@@ -9,5 +9,3 @@ while 1:
         break
     idx += 1
 print(idx)
-
-
