@@ -1,5 +1,3 @@
-dr = [1,-1,0,0]
-dc = [0,0,1,-1]
 n,m = map(int,input().split())
 arr = [list(map(int,input().split())) for _ in range(n)]
 dp = [[0]*m for _ in range(n)]
