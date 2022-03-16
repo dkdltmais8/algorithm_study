@@ -12,6 +12,6 @@ if arr:
            tot = 0
            cnt += 1
         tot += now
-    print(cnt)
+        print(cnt,tot,now)
 else:
     print(0)
